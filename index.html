@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Almacenamiento Local</title>
+</head>
+
+<body>
+  <button class="eliminar">Eliminar</button>
+  <h1 class="valorGuardado"> 1 </h1>
+
+  <script>
+    if (localStorage.getItem("valorGuardado") == null) {
+      localStorage.setItem("valorGuardado", prompt("Guardar este valor:"));
+    }
+
+    document.querySelector(".valorGuardado").innerHTML = localStorage.getItem("valorGuardado");
+
+    document.querySelector(".eliminar").addEventListener("click", () => {
+      document.querySelector(".valorGuardado").innerHTML = "",
+      localStorage.removeItem("valorGuardado")
+    })
+  </script>
+</body>
+
+</html>
